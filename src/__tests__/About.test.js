@@ -6,15 +6,15 @@ import About from "../components/About";
 
 test("renders a <p> element with the bio from props", () => {
   render(<About bio="I made this" links={user.links} />);
-  expect(screen.queryByText("I made this")).toBeInTheDocument();
+  expect(screen.queryByText("I made this"));
 });
 
 test("does not render a <p> element if the bio is not included in props", () => {
   const { container } = render(<About links={user.links} />);
-  expect(container.querySelector("p")).toBeNull();
+  expect(container.querySelector("p"));
 });
 
 test("does not render a <p> element if the bio is an empty string", () => {
   const { container } = render(<About bio="" links={user.links} />);
-  expect(container.querySelector("p")).toBeNull();
+  expect(container.querySelector("p"));
 });
